@@ -5,10 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=dev ts-node-dev --ignore-watch node_modules ./src/index.ts",
-    "start": "NODE_ENV=production node dist/src/index.js",
-    "build": "npm run build:clean && npm run build:tsc",
-    "build:tsc": "tsc",
-    "build:clean": "rm -rf dist; exit 0"
+    "start": "NODE_ENV=production tsc && node dist/src/index.js"
   },
   "keywords": [],
   "author": "",
