@@ -1,2 +1,8 @@
+# Ignore dependencies folder
 node_modules
+
+# Ignore config files
 .env
+
+# Ignore the build production folder
+dist

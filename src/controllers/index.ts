@@ -1,6 +1,7 @@
-const { getPetsService, createNewPetService } = require("../services");
+import { Request, Response } from "express";
+import { getPetsService, createNewPetService } from "../services";
 
-const getPetsController = async (req, res) => {
+export const getPetsController = async (req: Request, res: Response) => {
   const pets = await getPetsService();
   res.send({
     status: "OK",
@@ -8,7 +9,7 @@ const getPetsController = async (req, res) => {
   });
 };
 
-const createNewPetController = async (req, res) => {
+export const createNewPetController = async (req: Request, res: Response) => {
   if (!req.body.name || !req.body.lat || !req.body.lng || !req.body.urlImage) {
     res.status(400).send({
       status: "ERROR",
@@ -27,9 +28,4 @@ const createNewPetController = async (req, res) => {
     status: "OK",
     pet: createdPet,
   });
-};
-
-module.exports = {
-  getPetsController,
-  createNewPetController,
 };
