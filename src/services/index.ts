@@ -1,9 +1,9 @@
-import { Pets } from "../models/Pet";
+import { Pet } from "../models/Pet";
 
 export const getPetsService = async () => {
-  return await Pets.find();
+  return await Pet.find();
 };
 
 export const createNewPetService = async (pet: {}) => {
-  return await Pets.create(pet);
+  return await Pet.create(pet);
 };
